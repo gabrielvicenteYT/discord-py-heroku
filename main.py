@@ -12,6 +12,23 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("pong")
 
+@bot.command(pass_context=True)
+@commands.has_permissions(administrator=True)
+async def clean(ctx, limit: int):
+        await ctx.channel.purge(limit=limit)
+        await ctx.send('Cleared by {}'.format(ctx.author.mention))
+        await ctx.message.delete()
 
+@clean.error
+async def clear_error(ctx, error):
+    if isinstance(error, commands.MissingPermissions):
+        await ctx.send("You cant do that!")
+
+
+
+
+
+@bot.command()
+async def  
 if __name__ == "__main__":
     bot.run(TOKEN)
