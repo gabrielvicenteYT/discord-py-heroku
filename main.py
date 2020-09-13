@@ -12,13 +12,6 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("pong")
 
-@bot.command()
-async def stream(ctx, *, message): # b'\xfc'
-    await ctx.message.delete()
-    stream = discord.Streaming(
-        name=message,
-        url=stream_url,
-    )
-    await bot.change_presence(activity=stream)
+
 if __name__ == "__main__":
     bot.run(TOKEN)
