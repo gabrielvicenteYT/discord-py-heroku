@@ -6,6 +6,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix=".")
 bot.remove_command("help")
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 @bot.event
 async def on_ready():
@@ -402,4 +403,4 @@ async def deladminrole(ctx, role_id=None):
         em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
         await ctx.send(embed=em)
 
-bot.run("TOKEN")
+bot.run(TOKEN)
