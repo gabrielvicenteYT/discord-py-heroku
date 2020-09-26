@@ -19,17 +19,17 @@ async def mineplex(ctx):
    
 
 @bot.command()
-    async def nuke(self, ctx, channel: discord.TextChannel = None):
-        """Nuke a whole Channel"""
-        channel = channel if channel else ctx.channel
-        newchannel = await channel.clone()
-        await newchannel.edit(position=channel.position)
-        await channel.delete()
-        await newchannel.send(
-            embed=ctx.embed(
-                footer=f'💣 Channel #{channel.name} successfully nuked by '
-                       f'{ctx.author.display_name}',
-                color=0x1FFF00), delete_after=30)
+async def nuke(self, ctx, channel: discord.TextChannel = None):
+    """Nuke a whole Channel"""
+    channel = channel if channel else ctx.channel
+    newchannel = await channel.clone()
+    await newchannel.edit(position=channel.position)
+    await channel.delete()
+    await newchannel.send(
+        embed=ctx.embed(
+            footer=f'💣 Channel #{channel.name} successfully nuked by '
+                   f'{ctx.author.display_name}',
+            color=0x1FFF00), delete_after=30)
     
     
 
