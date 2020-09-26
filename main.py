@@ -15,14 +15,10 @@ async def config(ctx):
 @bot.command()
 async def mineplex(ctx):
     await ctx.send("`Mineplex Config`")
-    
-@nuke.error
-async def kick_error(error, ctx):
-   if isinstance(error, MissingPermissions):
-       await ctx.send("You don't have permission to do that!") 
+   
 
 @bot.command()
-@has_permissions(kick_members=True)  
+@has_permissions(MANAGE_CHANNELS=True)  
 async def nuke(ctx, channel: discord.TextChannel = None):
     channel = channel if channel else ctx.channel
     newchannel = await channel.clone()
@@ -40,6 +36,11 @@ async def nuke(ctx, channel: discord.TextChannel = None):
     icon_url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png')
 
     await newchannel.send(embed=embed, delete_after=10)
+    
+@nuke.error
+async def kick_error(error, ctx):
+   if isinstance(error, MissingPermissions):
+       await ctx.send("You don't have permission to do that!") 
     
 if __name__ == "__main__":
     bot.run(TOKEN)
