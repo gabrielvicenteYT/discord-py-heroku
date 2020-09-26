@@ -18,7 +18,7 @@ async def mineplex(ctx):
    
 
 @bot.command()
-@has_permissions(MANAGE_CHANNELS=True)  
+@has_permissions(Administrator=True)  
 async def nuke(ctx, channel: discord.TextChannel = None):
     channel = channel if channel else ctx.channel
     newchannel = await channel.clone()
@@ -38,7 +38,7 @@ async def nuke(ctx, channel: discord.TextChannel = None):
     await newchannel.send(embed=embed, delete_after=10)
     
 @nuke.error
-async def kick_error(error, ctx):
+async def nuke_error(error, ctx):
    if isinstance(error, MissingPermissions):
        await ctx.send("You don't have permission to do that!") 
     
