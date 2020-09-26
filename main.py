@@ -22,7 +22,9 @@ async def mineplex(ctx):
 async def nuke(ctx, channel: discord.TextChannel = None):
     channel = channel if channel else ctx.channel
     newchannel = await channel.clone()
-    await newchannel.edit(position=channel.position)
+    if discord.User permissions = "admin":
+        try:
+          await newchannel.edit(position=channel.position)
     await channel.delete()
     embed = discord.Embed(
 
@@ -36,11 +38,11 @@ async def nuke(ctx, channel: discord.TextChannel = None):
     icon_url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png')
 
     await newchannel.send(embed=embed, delete_after=10)
+        except Exception as e:
+          ee = "Error: " + e
+          await ctx.send_message(content=ee)
     
-@nuke.error
-async def nuke_error(error, ctx):
-   if isinstance(error, MissingPermissions):
-       await ctx.send("You don't have permission to do that!") 
     
+
 if __name__ == "__main__":
     bot.run(TOKEN)
