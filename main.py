@@ -17,24 +17,18 @@ async def mineplex(ctx):
     await ctx.send("`Mineplex Config`")
    
 
-@bot.command()
-async def nuke(ctx, channel: discord.TextChannel = None):
-    channel = channel if channel else ctx.channel
-    newchannel = await channel.clone()
-    await newchannel.edit(position=channel.position)
-    await channel.delete()
-    embed = discord.Embed(
-
-        title = 'nuke go brr',
-        description = '',
-        color = discord.Color.blue( )
-    )
-    embed.set_footer(text='DortWare')
-    embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png')
-    embed.set_author(name='NUKED CHANNEL',
-    icon_url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png')
-
-    await newchannel.send(embed=embed, delete_after=10)
+@bot.command(name="nuke")
+    async def nuke(self, ctx, channel: discord.TextChannel = None):
+        """Nuke a whole Channel"""
+        channel = channel if channel else ctx.channel
+        newchannel = await channel.clone()
+        await newchannel.edit(position=channel.position)
+        await channel.delete()
+        await newchannel.send(
+            embed=ctx.embed(
+                footer=f'💣 Channel #{channel.name} successfully nuked by '
+                       f'{ctx.author.display_name}',
+                color=0x1FFF00), delete_after=30)
     
     
 
