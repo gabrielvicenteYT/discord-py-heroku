@@ -19,7 +19,7 @@ async def mineplex(ctx):
    
 
 @bot.command()
-async def nuke(self, ctx, channel: discord.TextChannel = None):
+async def nuke(ctx, channel: discord.TextChannel = None):
     """Nuke a whole Channel"""
     channel = channel if channel else ctx.channel
     newchannel = await channel.clone()
