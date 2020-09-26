@@ -17,7 +17,7 @@ async def mineplex(ctx):
     await ctx.send("`Mineplex Config`")
    
 
-@bot.command(name="nuke")
+@bot.command()
     async def nuke(self, ctx, channel: discord.TextChannel = None):
         """Nuke a whole Channel"""
         channel = channel if channel else ctx.channel
