@@ -17,10 +17,12 @@ async def youtube(ctx):
     await ctx.send("Don't forget to subscribe to RiskMC!\nhttps://is.gd/RiskMC")
     
 @bot.command()
-async def gravity(ctx):
+async def gravity(ctx): #best client ww
     await ctx.send("Gravity is probably the best client for the price right now. Has the fastest non blink fly and has unmatchable bypasses. Buy it from https://intent.store")
     
-    
+@bot.command()
+async def help(ctx, *, message):
+    await ctx.send("`Commands:`\n`$gravity` - Shows information about gravity.")
     
 # @bot.command()
 #async def nuke(ctx, channel: discord.TextChannel = None):
