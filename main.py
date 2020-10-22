@@ -13,11 +13,11 @@ async def on_ready():
 async def intent(ctx):
     await ctx.send("`Intent Download`\nhttps://intent.store/intentlauncher/Intent%20Launcher.zip")
 @bot.command()
-async def youtube();
+async def youtube(ctx):
     await ctx.send("Don't forget to subscribe to RiskMC!\nhttps://is.gd/RiskMC")
     
 @bot.command()
-await def gravity();
+await def gravity(ctx):
     await ctx.send("Gravity is probably the best client for the price right now. Has the fastest non blink fly and has unmatchable bypasses. Buy it from https://intent.store")
     
     
