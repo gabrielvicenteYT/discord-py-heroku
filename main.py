@@ -12,21 +12,28 @@ async def on_ready():
 @bot.command()
 async def intent(ctx):
     await ctx.send("`Intent Download`\nhttps://intent.store/intentlauncher/Intent%20Launcher.zip")
-
-   
-
+@bot.command()
+async def youtube();
+    await ctx.send("Don't forget to subscribe to RiskMC!\nhttps://is.gd/RiskMC")
+    
+@bot.command()
+await def gravity();
+    await ctx.send("Gravity is probably the best client for the price right now. Has the fastest non blink fly and has unmatchable bypasses. Buy it from https://intent.store")
+    
+    
+    
 # @bot.command()
 #async def nuke(ctx, channel: discord.TextChannel = None):
- #   """Nuke a whole Channel"""
-  #  channel = channel if channel else ctx.channel
-   # newchannel = await channel.clone()
-    #await newchannel.edit(position=channel.position)
-    #await channel.delete()
-    #await newchannel.send(
-     #   embed=ctx.embed(
-      #      footer=f'💣 Channel #{channel.name} successfully nuked by '
-       #            f'{ctx.author.display_name}',
-        #    color=0x1FFF00), delete_after=30)
+#   """Nuke a whole Channel"""
+#   channel = channel if channel else ctx.channel
+#  newchannel = await channel.clone()
+#   await newchannel.edit(position=channel.position)
+#    await channel.delete()
+#   await newchannel.send(
+#       embed=ctx.embed(
+#           footer=f'💣 Channel #{channel.name} successfully nuked by '
+#                  f'{ctx.author.display_name}',
+#           color=0x1FFF00), delete_after=30)
     
     
 
