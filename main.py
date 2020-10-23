@@ -11,11 +11,13 @@ async def on_ready():
 
 @bot.command()
 async def intent(ctx):
-    await ctx.send("`Intent Download`\nhttps://intent.store/intentlauncher/Intent%20Launcher.zip")
+    embed=discord.Embed(title="Download", url="https://intent.store/intentlauncher/Intent%20Launcher.zip", description="Click to install the Intent Launcher.", color=0x00ff4c)
+    await ctx.send(embed=embed)
+
 @bot.command()
 async def youtube(ctx):
     await ctx.send("Don't forget to subscribe to RiskMC!\nhttps://is.gd/RiskMC")
-    
+     
 @bot.command()
 async def gravity(ctx): #best client ww
     await ctx.send("Gravity is probably the best client for the price right now. Has the fastest non blink fly and has unmatchable bypasses. Buy it from https://intent.store")
