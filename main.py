@@ -20,9 +20,9 @@ async def youtube(ctx):
     await ctx.send(embed=embed)
     
 @bot.command()
-async def gravity(ctx): #best client ww
-    await ctx.send("Gravity is probably the best client for the price right now. Has the fastest non blink fly and has unmatchable bypasses. Buy it from https://intent.store")
-    
+async def gravity(ctx): #best client ww 
+    embed=discord.Embed(title="Gravity Discord", url="https://intent.store", description="Check out Gravity client. It's probably the best client out right now for the price. Has fastest non-blink fly for hypixel and has many bypasses for other servers such as Mineplex. All for that for only 12 dollars usd.")
+    await ctx.send(embed=embed)
     
 # @bot.command()
 #async def nuke(ctx, channel: discord.TextChannel = None):
