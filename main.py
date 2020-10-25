@@ -3,6 +3,7 @@ from discord.ext import commands
 import discord
 
 bot = commands.Bot(command_prefix="$")
+bot.remove_command('help')
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 @bot.event
@@ -24,6 +25,9 @@ async def gravity(ctx): #best client ww
     embed=discord.Embed(title="Gravity Discord", url="https://intent.store", description="Check out Gravity client. It's probably the best client out right now for the price. Has fastest non-blink fly for hypixel and has many bypasses for other servers such as Mineplex. All for that for only 12 dollars usd.")
     await ctx.send(embed=embed)
     
+@bot.command()
+async def help(ctx):
+    await ctx.send("`Help:`\n**Commands**")
 # @bot.command()
 #async def nuke(ctx, channel: discord.TextChannel = None):
 #   """Nuke a whole Channel"""
